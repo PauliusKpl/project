@@ -4,27 +4,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Airlines</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    
+        <link rel="stylesheet" href="{{ asset('style.css') }}">
+    </head>  
     <body>
      <div class="header">
         <a href="/"><h3 class="logo">AIRLINES</h3></a>
         <ul>
-            <li><a href="/">Airports</a></li>
+            <li><a href="/airports">Airports</a></li>
             <li><a href="/countries">Countries</a></li>
             <li><a href="/airlines">Airlines</a></li>
         </ul>
      </div>
-
-     <div class="main" style="text-align: center;">
-  <h1>Are you sure you want to delete this airline?</h1>
-  <p>This action will remove all associations with airports</p>
-     </div>
-     <div style="margin: auto; width: 100px">
-     <button class="greenbtn">Yes</button>
-       <button class="redbtn">No</button>
-     </div>
-    </body>
-
+    @yield('content')
+</body>
 </html>

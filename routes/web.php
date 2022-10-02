@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AirportController;
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\AirlineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,58 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('airports');
-});
+Route::get('/', function(){return redirect('/airports');});
 
-Route::get('/countries', function () {
-    return view('countries');
-});
+Route::get('/airports', [AirportController::class, 'index']);
 
-Route::get('/airlines', function () {
-    return view('airlines');
-});
+Route::get('/airports/create', [AirportController::class, 'create']);
 
-Route::get('/addAirline', function () {
-    return view('addAirline');
-});
+Route::get('/countries', [CountryController::class, 'index']);
 
-Route::get('/removeAirline', function () {
-    return view('removeAirline');
-});
+Route::get('/countries/create', [CountryController::class, 'create']);
 
-Route::get('/editAirport', function () {
-    return view('editAirport');
-});
+Route::get('/airlines', [AirlineController::class, 'index']);
 
-Route::get('/removeAirport', function () {
-    return view('removeAirport');
-});
-
-Route::get('/createCountry', function () {
-    return view('createCountry');
-});
-
-Route::get('/createAirline', function () {
-    return view('createAirline');
-});
-
-Route::get('/unlinkAirline', function () {
-    return view('unlinkAirline');
-});
-
-Route::get('/createAirport', function () {
-    return view('createAirport');
-});
-
-Route::get('/editAirline', function () {
-    return view('editAirline');
-});
-
-Route::get('/editCountry', function () {
-    return view('editCountry');
-});
-
-Route::get('/removeCountry', function () {
-    return view('removeCountry');
-});
+Route::get('airlines/create', [AirlineController::class, 'create']);

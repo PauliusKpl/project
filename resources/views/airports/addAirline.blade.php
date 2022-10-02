@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Airlines</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    
-    <body>
+@extends('layout')
+@section('content')
      <div class="header">
         <a href="/"><h3 class="logo">AIRLINES</h3></a>
         <ul>
@@ -19,14 +11,13 @@
 
      <div class="main">
     <h1>Let's add airline</h1>
-    <select>
+    <form action="">
+    <select name="airline">
         <option>Select airline</option>
     </select>
     <br>
     <br>
      <button class="greenbtn">Link</button>
+     </form>
      </div>
-
-    </body>
-
-</html>
+@endsection
