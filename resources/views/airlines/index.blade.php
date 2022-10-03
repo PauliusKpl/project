@@ -1,9 +1,9 @@
 @extends('layout')
 @section('content')
 
-     <div class="main">
+     <div class="index">
      <div class="options">
-     <form action="/airlines/create"> <button class="greenbtn">New airline</button> </form>
+     <form action="{{ route('airlines/create') }}"> <button class="greenbtn">New airline</button> </form>
      </div>
 
      <table>

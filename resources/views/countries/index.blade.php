@@ -1,10 +1,10 @@
 @extends('layout')
 @section('content')
 
-     <div class="main">
+     <div class="index">
 
      <div class="options">
-     <form style="display: inline-block" action="/countries/create"> <button class="greenbtn">New country</button> </form>
+     <form style="display: inline-block" action="{{ route('countries/create') }}"> <button class="greenbtn">New country</button> </form>
      <form style="display: inline-block" action=""> <button class="greenbtn">Countries without airlines</button> </form>
      <form style="display: inline-block" action=""> <button class="greenbtn">Countries without airlines and airports</button> </form>
      </div>

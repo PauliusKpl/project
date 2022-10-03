@@ -1,14 +1,14 @@
 @extends('layout')
 @section('content')
 
-     <div class="main">
+     <div class="index">
       <form class="search" action="">
       <select name="country">
         <option>Search by country</option>
     </select>
-    <input type="submit" value="Search">
+    <button class="greenbtn">Search</button>
 </form>
-<form action="/airports/create"> <button class="greenbtn">New airport</button> </form>
+<form action="{{ route('airports/create') }}"> <button class="greenbtn">New airport</button> </form>
 
      <table>
   <tr>

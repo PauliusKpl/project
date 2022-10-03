@@ -10,9 +10,9 @@
      <div class="header">
         <a href="/"><h3 class="logo">AIRLINES</h3></a>
         <ul>
-            <li><a href="/airports">Airports</a></li>
-            <li><a href="/countries">Countries</a></li>
-            <li><a href="/airlines">Airlines</a></li>
+            <li><a href="{{ route('airports') }}">Airports</a></li>
+            <li><a href="{{ route('countries') }}">Countries</a></li>
+            <li><a href="{{ route('airlines') }}">Airlines</a></li>
         </ul>
      </div>
     @yield('content')

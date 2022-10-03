@@ -18,14 +18,14 @@ use App\Http\Controllers\AirlineController;
 
 Route::get('/', function(){return redirect('/airports');});
 
-Route::get('/airports', [AirportController::class, 'index']);
+Route::get('/airports', [AirportController::class, 'index'])->name('airports');
 
-Route::get('/airports/create', [AirportController::class, 'create']);
+Route::get('/airports/create', [AirportController::class, 'create'])->name('airports/create');
 
-Route::get('/countries', [CountryController::class, 'index']);
+Route::get('/countries', [CountryController::class, 'index'])->name('countries');
 
-Route::get('/countries/create', [CountryController::class, 'create']);
+Route::get('/countries/create', [CountryController::class, 'create'])->name('countries/create');
 
-Route::get('/airlines', [AirlineController::class, 'index']);
+Route::get('/airlines', [AirlineController::class, 'index'])->name('airlines');
 
-Route::get('airlines/create', [AirlineController::class, 'create']);
+Route::get('airlines/create', [AirlineController::class, 'create'])->name('airlines/create');
