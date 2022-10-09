@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Airport extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'title',
+        'country',
+        'location',
+        'airport',
+    ];
+
+    public function countryRelation(){
+      return ($this->belongsTo(Country::class, 'country', 'title'));
+      }
+
+      public function airlineRelation(){
+        return ($this->belongsTo(Airline::class, 'airline', 'title'));
+        }
+
 }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('country');
             $table->string('location');
-            $table->string('airline');
+            $table->string('airline')->nullable();
             $table->timestamps();
         });
     }
