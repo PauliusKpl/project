@@ -20,8 +20,9 @@
     </select>
     @include('partials._error-country')
     <label for="location" class="form-label">Location</label>
-    <input name="location">
+    <input name="location" id="location" placeholder="Select location on map" readonly>
     @include('partials._error-location')
+    @include('partials._map')
     <br>
     <button class="greenbtn">Create</button>
     </form>

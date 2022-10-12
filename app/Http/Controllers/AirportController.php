@@ -14,8 +14,10 @@ class AirportController extends Controller
     public function index(Request $request){
 
      //   $airports = Airport::all();
+     
      Airport::doesnthave('countryRelation')->delete();
      $airports = Airport::has('countryRelation')->get();
+
 
      if($request->country == 'Search by country') $request->country = '';
 
@@ -53,6 +55,8 @@ class AirportController extends Controller
     public function addAirline($id){
       $airport = Airport::find($id);
       $airlines = Airline::all();
+
+
       return view('airports.addAirline', ['airlines' => $airlines, 'id' => $id, 'airport' => $airport]);
     }
 

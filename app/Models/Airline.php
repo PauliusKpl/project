@@ -17,4 +17,8 @@ class Airline extends Model
      return ($this->belongsTo(Country::class, 'country', 'title'));
       }
 
+      public function airportRelation(){
+        return ($this->hasMany(Airport::class, 'airline', 'title'));
+        }
+
 }

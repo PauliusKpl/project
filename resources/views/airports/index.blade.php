@@ -17,6 +17,7 @@
     <button class="greenbtn">Search</button>
 </form>
 
+
 <form action="{{ route('airports/create') }}"> <button class="greenbtn">New airport</button> </form>
 @endif
      <table>
@@ -29,6 +30,7 @@
   </tr>
   <tr>
   @foreach($airports as $airport)
+
     <td>{{$airport->title}}</td>
     <td>{{$airport->country}}</td>
     <td>{{$airport->location}}</td>

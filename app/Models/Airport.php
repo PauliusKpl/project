@@ -20,7 +20,7 @@ class Airport extends Model
       }
 
       public function airlineRelation(){
-        return ($this->belongsTo(Airline::class, 'airline', 'title'));
+        return ($this->hasMany(Airline::class, 'title', 'airline'));
         }
 
 }

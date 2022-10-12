@@ -17,8 +17,9 @@
     </select>
     @include('partials._error-country')
     <label for="location" class="form-label">Location</label>
-    <input name="location" value="{{$airport->location}}">
+    <input name="location" id="location" readonly value="{{$airport->location}}">
     @include('partials._error-location')
+    @include('partials._map')
     <br>
     <button class="greenbtn">Save</button>
     </form>
