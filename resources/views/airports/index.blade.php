@@ -37,7 +37,7 @@
     <td>{{$airport->airline}}</td>
     <td>
     <form style="display: inline-block" action="{{ route('airports/addAirline', $id = $airport->id) }}">  <button class="greenbtn">Add airline</button> </form>
-    <form style="display: inline-block" action="{{ route('airports/addAirline', $id = $airport->id) }}">  <button class="redbtn">Remove airline</button> </form>
+    <form style="display: inline-block" action="{{ route('airports/unlinkAirline', $id = $airport->id) }}">  <button class="redbtn">Remove airline</button> </form>
     <form style="display: inline-block" action="{{ route('airports/edit', $id = $airport->id) }}">  <button class="orangebtn">Edit</button> </form>
     <form style="display: inline-block" action="{{ route('airports/delete', $id = $airport->id) }}">  <button class="redbtn">Delete</button> </form>
     </td>

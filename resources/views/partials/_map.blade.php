@@ -1,7 +1,7 @@
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
 <style>
-#map { height: 50vh; width: 100%; margin: auto; }
+#map { height: 50vh; width: 100%; margin: auto; margin-top: 2px; }
 #map input{ border: none; width: 100%; margin: 0; }
 </style>
 

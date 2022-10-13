@@ -28,6 +28,8 @@ Route::get('/airports/{id}/addAirline', [AirportController::class, 'addAirline']
 
 Route::post('/airports/{id}/addAirline', [AirportController::class, 'storeAirline'])->name('airports/storeAirline');
 
+Route::get('/airports/{id}/unlinkkAirline', [AirportController::class, 'unlinkAirline'])->name('airports/unlinkAirline');
+
 Route::get('/airports/{id}/edit', [AirportController::class, 'edit'])->name('airports/edit');
 
 Route::post('/airports/{id}/edit', [AirportController::class, 'update'])->name('airports/update');

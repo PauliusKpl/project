@@ -55,8 +55,6 @@ class AirportController extends Controller
     public function addAirline($id){
       $airport = Airport::find($id);
       $airlines = Airline::all();
-
-
       return view('airports.addAirline', ['airlines' => $airlines, 'id' => $id, 'airport' => $airport]);
     }
 
@@ -69,6 +67,13 @@ class AirportController extends Controller
       $airport->airline = $airport->airline . ', ' . $input['airline'];
       $airport->save();
       return redirect(route('airports'));
+    }
+
+    public function unlinkAirline($id){
+      $airport = Airport::find($id);
+      $airlines = explode(',', $airport->airline);
+      
+      return view('airports.unlinkAirline', ['airlines' => $airlines, 'id' => $id, 'airport' => $airport]);
     }
 
     public function edit($id){
