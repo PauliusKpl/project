@@ -28,7 +28,9 @@ Route::get('/airports/{id}/addAirline', [AirportController::class, 'addAirline']
 
 Route::post('/airports/{id}/addAirline', [AirportController::class, 'storeAirline'])->name('airports/storeAirline');
 
-Route::get('/airports/{id}/unlinkkAirline', [AirportController::class, 'unlinkAirline'])->name('airports/unlinkAirline');
+Route::get('/airports/{id}/unlinkAirline', [AirportController::class, 'unlinkAirline'])->name('airports/unlinkAirline');
+
+Route::post('/airports/{id}/unlinkAirline', [AirportController::class, 'removeAirline'])->name('airports/removeAirline');
 
 Route::get('/airports/{id}/edit', [AirportController::class, 'edit'])->name('airports/edit');
 

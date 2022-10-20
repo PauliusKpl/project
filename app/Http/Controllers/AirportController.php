@@ -18,7 +18,6 @@ class AirportController extends Controller
      Airport::doesnthave('countryRelation')->delete();
      $airports = Airport::has('countryRelation')->get();
 
-
      if($request->country == 'Search by country') $request->country = '';
 
         if($request->country != null){$airports = Airport::where('country', 'LIKE', '%'.$request->country.'%')->get();}
@@ -39,7 +38,7 @@ class AirportController extends Controller
 
     public function store(Request $request){
       $input = $request->validate([
-       'title' => 'required',
+       'title' => 'required|min:2|max:60',
        'country' => 'required',
        'location' => 'required'
       ]);
@@ -64,16 +63,23 @@ class AirportController extends Controller
        ]);
 
       $airport = Airport::find($id);
-      $airport->airline = $airport->airline . ', ' . $input['airline'];
+      $airport->airline = $input['airline'];
       $airport->save();
       return redirect(route('airports'));
     }
 
     public function unlinkAirline($id){
       $airport = Airport::find($id);
-      $airlines = explode(',', $airport->airline);
+      $airlines = $airport->airline;
       
       return view('airports.unlinkAirline', ['airlines' => $airlines, 'id' => $id, 'airport' => $airport]);
+    }
+
+    public function removeAirline($id){
+     $edit = Airport::find($id);
+     $edit->airline = null;
+     $edit->save();
+      return redirect(route('airports'));
     }
 
     public function edit($id){
@@ -84,7 +90,7 @@ class AirportController extends Controller
 
     public function update(Request $request, $id){
      $input = $request->validate([
-       'title' => 'required',
+       'title' => 'required|min:2|max:60',
        'country' => 'required',
        'location' => 'required'
      ]);

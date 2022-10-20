@@ -2,12 +2,10 @@
 @section('content')
      <div class="main">
     <h1>Let's remove airline from {{$airport->title}} airport</h1>
-    <form method="post" action="{{ route('airports/storeAirline', $id) }}">
+    <form method="post" action="{{ route('airports/removeAirline', $id) }}">
         @csrf
    <label for="airline"></label> <select name="airline">
-        @foreach($airlines as $airline)
-        <option>{{$airline}}</option>
-        @endforeach
+        <option>{{$airlines}}</option>
     </select>
     <br>
     <br>

@@ -33,8 +33,8 @@ class CountryController extends Controller
 
        public function store(Request $request){
         $input = $request->validate([
-          'title' => 'required',
-          'iso_code' => 'required'
+          'title' => 'required|min:2|max:60',
+          'iso_code' => 'required|min:2|max:4'
         ]);
         Country::create($input);
         return redirect(route('countries'));
@@ -48,8 +48,8 @@ class CountryController extends Controller
        public function update(Request $request, $id){
 
         $input = $request->validate([
-          'title' => 'required',
-          'iso_code' => 'required'
+          'title' => 'required|min:2|max:60',
+          'iso_code' => 'required|min:2|max:4'
         ]);
 
         $edit = Country::find($id);

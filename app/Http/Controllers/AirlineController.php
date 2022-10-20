@@ -27,7 +27,7 @@ class AirlineController extends Controller
 
        public function store(Request $request){
         $input = $request->validate([
-          'title' => 'required',
+          'title' => 'required|min:2|max:60',
           'country' => 'required'
         ]);
         Airline::create($input);
@@ -43,7 +43,7 @@ class AirlineController extends Controller
        public function update(Request $request, $id){
 
         $input = $request->validate([
-          'title' => 'required',
+          'title' => 'required|min:2|max:60',
           'country' => 'required'
         ]);
 
