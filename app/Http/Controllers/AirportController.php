@@ -16,7 +16,15 @@ class AirportController extends Controller
      //   $airports = Airport::all();
      
      Airport::doesnthave('countryRelation')->delete();
+     
      $airports = Airport::has('countryRelation')->get();
+
+     $withoutAirline = Airport::doesnthave('airlineRelation')->get();
+    
+    foreach($withoutAirline as $air){
+      $air->airline = null;
+      $air->save();
+    };
 
      if($request->country == 'Search by country') $request->country = '';
 
